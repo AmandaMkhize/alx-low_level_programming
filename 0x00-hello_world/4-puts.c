@@ -1,7 +1,7 @@
 #!/bin/bash
 #include <stdio.h>
 
-/**
+/*
  * main - main put function
  *
  * Return: 0
