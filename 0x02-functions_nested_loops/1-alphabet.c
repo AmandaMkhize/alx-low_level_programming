@@ -2,12 +2,10 @@
 
 
 /**
- * main - program that prints the alphabet in lowercase
- *
- *  Return: Always 0.
+ *print_alphabet - program that prints the alphabet in lowercase
  */
 
-void print_alphabet(void);
+void print_alphabet(void)
 {
 	char letter;
 
