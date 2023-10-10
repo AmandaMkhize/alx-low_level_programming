@@ -1,9 +1,15 @@
-#include <stdio.h>
+#include "main.h"
 
 int main(void)
 {
-	char ch = 'A';
-
-	printf("value of %d is %d\n", ch, ch);
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
+	_putchar('\n');
 	return (0);
 }
