@@ -1,49 +1,50 @@
 #include "main.h"
 
 /**
- * print_times_table - Prints the n times table.
+ * print_times_table - Prints the n times table, starting with 0.
  * @n: The number for which to print the times table.
- *
- * Description: If n is greater than 15 or less than 0, nothing is printed.
- * Numbers are separated by a comma and space.
- * The first number printed is the number passed to the function.
- * The last number printed is 15, or less if n is less than 15.
  */
 void print_times_table(int n)
 {
-	if (n > 15 || n < 0)
-		return;
+	int i, j, k;
 
-	int a, b, result;
-
-	for (a = 0; a <= n; a++)
+	if (n >= 0 && n <= 15)
 	{
-		_putchar('0');
-		for (b = 1; b <= n; b++)
+		for (i = 0; i <= n; i++)
 		{
-			_putchar(',');
-			_putchar(' ');
-			result = a * b;
-
-			if (result < 10)
+			for (j = 0; j <= n; j++)
 			{
-				_putchar(' ');
-				_putchar(' ');
-				_putchar(result + '0');
+				k = j * i;
+				if (j == 0)
+				{
+					_putchar(k + '0');
+				}
+				else if (k < 10 && j != 0)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar(k + '0');
+				}
+				else if (k >= 10 && k < 100)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar((k / 10) + '0');
+					_putchar((k % 10) + '0');
+				}
+				else if (k >= 100)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar((k / 100) + '0');
+					_putchar(((k / 10) % 10) + '0');
+					_putchar((k % 10) + '0');
+				}
 			}
-			else if (result < 100)
-			{
-				_putchar(' ');
-				_putchar((result / 10) + '0');
-				_putchar((result % 10) + '0');
-			}
-			else
-			{
-				_putchar((result / 100) + '0');
-				_putchar(((result / 10) % 10) + '0');
-				_putchar((result % 10) + '0');
-			}
+			_putchar('\n');
 		}
-		_putchar('\n');
 	}
 }
