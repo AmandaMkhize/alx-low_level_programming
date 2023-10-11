@@ -9,31 +9,23 @@ void times_table(void)
 
 	for (a = 0; a <= 9; a++)
 	{
-		for (b = 0; b <= 9; b++)
+		_putchar('0'); /* Print the first digit of the first number */
+		for (b = 1; b <= 9; b++)
 		{
+			_putchar(',');
+			_putchar(' ');
+
 			result = a * b;
 
-			if (b == 0)
+			if (result < 10)
 			{
-				_putchar('0');
-			}
-			else if (result < 10)
-			{
-				_putchar(' ');
-				_putchar(' ');
-				_putchar(result + '0');
+				_putchar(' '); /* Print an extra space for single-digit numbers */
+				_putchar(result + '0'); /* Print the result */
 			}
 			else
 			{
-				_putchar(' ');
-				_putchar((result / 10) + '0');
-				_putchar((result % 10) + '0');
-			}
-
-			if (b < 9)
-			{
-				_putchar(',');
-				_putchar(' ');
+				_putchar((result / 10) + '0'); /* Print the tens digit */
+				_putchar((result % 10) + '0'); /* Print the ones digit */
 			}
 		}
 		_putchar('\n');
