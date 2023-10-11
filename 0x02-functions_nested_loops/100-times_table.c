@@ -3,6 +3,11 @@
 /**
  * print_times_table - Prints the n times table.
  * @n: The number for which to print the times table.
+ *
+ * Description: If n is greater than 15 or less than 0, nothing is printed.
+ * Numbers are separated by a comma and space.
+ * The first number printed is the number passed to the function.
+ * The last number printed is 15, or less if n is less than 15.
  */
 void print_times_table(int n)
 {
@@ -19,6 +24,7 @@ void print_times_table(int n)
 			_putchar(',');
 			_putchar(' ');
 			result = a * b;
+
 			if (result < 10)
 			{
 				_putchar(' ');
