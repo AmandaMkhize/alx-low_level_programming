@@ -2,32 +2,38 @@
 
 /**
  * times_table - Prints the 9 times table.
- *
- * Return: No return.
  */
 void times_table(void)
 {
-	int a, b, mu;
+	int a, b, result;
 
 	for (a = 0; a <= 9; a++)
 	{
-		_putchar(48);
-
-		for (b = 1; b <= 9; b++)
+		for (b = 0; b <= 9; b++)
 		{
-			mu = a * b;
-			_putchar(44);
-			_putchar(32);
+			result = a * b;
 
-			if (mu <= 9)
+			if (b == 0)
 			{
-				_putchar(32);
-				_putchar(mu / 48);
+				_putchar('0');
+			}
+			else if (result < 10)
+			{
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(result + '0');
 			}
 			else
 			{
-				_putchar((mu / 10) / 48);
-				_putchar((mu % 10) / 48);
+				_putchar(' ');
+				_putchar((result / 10) + '0');
+				_putchar((result % 10) + '0');
+			}
+
+			if (b < 9)
+			{
+				_putchar(',');
+				_putchar(' ');
 			}
 		}
 		_putchar('\n');
