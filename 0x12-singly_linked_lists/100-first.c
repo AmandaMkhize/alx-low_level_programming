@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "lists.h"
 
 /**
  * custom_init - prints a message before the main
