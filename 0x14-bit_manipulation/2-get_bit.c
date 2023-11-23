@@ -10,21 +10,21 @@
 */
 int get_bit(unsigned long int n, unsigned int index)
 {
-unsigned long int *mask = malloc(sizeof(unsigned long int));
-int result = -1;
+	unsigned long int *mask = malloc(sizeof(unsigned long int));
+	int result = -1;
 
-if (mask == NULL || index > (sizeof(unsigned long int) * 8 - 1))
-{
-free(mask);
-exit(EXIT_FAILURE);
-}
+	if (mask == NULL || index > (sizeof(unsigned long int) * 8 - 1))
+		{
+		free(mask);
+		exit(EXIT_FAILURE);
+		}
 
-*mask = 1;
-*mask <<= index;
+	*mask = 1;
+	*mask <<= index;
 
-result = ((n & *mask) ? 1 : 0);
+	result = ((n & *mask) ? 1 : 0);
 
-free(mask);
+	free(mask);
 
-return (result);
+	return (result);
 }
